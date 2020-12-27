@@ -12,11 +12,8 @@ def is_prime(n: int) -> bool:
     return True
 
 
-if __name__ == "__main__":
-    pass
-
-
 def prime_numbers_between_range(number):
+    """Returns all the prime numbers up to the given number"""
     primes = []
     for p in range(number):
         if is_prime(p):
@@ -24,7 +21,8 @@ def prime_numbers_between_range(number):
     return primes
 
 
-def prime_factor(number):
+def prime_factors(number):
+    """Returns the prime-factor of a given number"""
     p = 2
     primes = []
     while number >= p**2:
@@ -33,6 +31,10 @@ def prime_factor(number):
             primes.append(p)
         else:
             p = p+1
-    # finally the number remaining is the largest prime factor
+    # The remainder is the final prime number.
     primes.append(int(number))
     return primes
+
+
+if __name__ == "__main__":
+    pass
