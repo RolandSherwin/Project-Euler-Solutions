@@ -7,16 +7,24 @@ class MatrixTraversal():
         self.look_ahead = look_ahead
         self.wrap_around = wrap_around
 
-    def cannot_go_up(self, index, look_ahead):
+    def cannot_go_up(self, index, look_ahead=None):
+        if look_ahead is None:
+            look_ahead = self.look_ahead
         return index[0] < look_ahead-1
 
-    def cannot_go_down(self, index, look_ahead):
+    def cannot_go_down(self, index, look_ahead=None):
+        if look_ahead is None:
+            look_ahead = self.look_ahead
         return index[0] + look_ahead > self.grid.shape[0]
 
-    def cannot_go_left(self, index, look_ahead):
+    def cannot_go_left(self, index, look_ahead=None):
+        if look_ahead is None:
+            look_ahead = self.look_ahead
         return index[1] < look_ahead-1
 
-    def cannot_go_right(self, index, look_ahead):
+    def cannot_go_right(self, index, look_ahead=None):
+        if look_ahead is None:
+            look_ahead = self.look_ahead
         return index[1] + look_ahead > self.grid.shape[1]
 
     def up(self, index, grid=None, look_ahead=None, wrap_around=None):
